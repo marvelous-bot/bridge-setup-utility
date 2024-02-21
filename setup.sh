@@ -94,6 +94,13 @@ npm install
 green_echo "Completed Task 9: npm install"
 cd ../../ 
 
+# Enable firewall, disable all ports except for ssh
+green_echo "Initiating Task 10: enable firewall"
+ufw status
+ufw allow ssh
+ufw enable
+green_echo "Completed Task 10: firewall enabled"
+
 # Display information at the end
 green_echo "---------------------------------------------------------"
 green_echo "Setup completed successfully!"
