@@ -1,4 +1,5 @@
 #!/bin/bash
+source ~/.nvm/nvm.sh
 
 # Define the directory paths
 main_dir="/var/cron/bridge-core"
