@@ -84,21 +84,27 @@ green_echo "Completed Task 8: Copied 'bridge-core' directory to /var/cron"
 echo ""
 
 # Task 9: Run npm install in /var/cron/bridge-core and /var/cron/bridge-core/price_updater
-green_echo "Initiating Task 9: Run npm install in /var/cron/bridge-core"
+green_echo "Initiating Task 9: Run npm install in /var/cron/bridge-core and /var/cron/price_updater"
 cd /var/cron/bridge-core
 npm install
-green_echo "Completed Task 9: npm install in /var/cron/bridge-core"
 
 # Go into the "price_updater" directory and run "npm install"
-green_echo "Initiating Task 9: Run npm install in /var/cron/bridge-core/price_updater"
 cd price_updater
 npm install
-green_echo "Completed Task 9: npm install in /var/cron/bridge-core/price_updater"
-cd ../../  # Return to the original directory
+green_echo "Completed Task 9: npm install"
+cd ../../ 
 
 # Display information at the end
+green_echo "---------------------------------------------------------"
 green_echo "Setup completed successfully!"
 green_echo "MySQL Username: $mysql_username"
 green_echo "MySQL Password: $mysql_password"
 green_echo "Database Name: $mysql_db_name"
 echo ""
+green_echo "---------------------------------------------------------"
+echo ""
+green_echo "Update the above given DB information in your .env file in /var/cron/bridge-core/.env as well as in /var/cron/price_updater/.env"
+green_echo "You must also update the necessary information regarding private key and address of the signer in the env file present in /var/cron/bridge-core"
+green_echo "After doing above given steps, run the start.sh file, YOU MUST ONLY RUN 'start.sh' FILE AFTER COMPLETING ABOVE STEPS!!!"
+green_echo "Refer to the readme.md file in project's github repo for full steps on bridge setup"
+green_echo "This utility is designed and developed for MainnetZ Blockchain for setting up cross-chain bridge"

@@ -14,13 +14,17 @@ sub_dir="$main_dir/price_updater"
 cd "$main_dir" || exit
 
 # Run all JS files in the main directory with PM2
-pm2 start *.js --name bridge-core
+for js_file in *.js; do
+  pm2 start "$js_file" --name "$(basename "$js_file" .js)"
+done
 
 # Navigate to the subdirectory
 cd "$sub_dir" || exit
 
 # Run all JS files in the subdirectory with PM2
-pm2 start *.js --name price-updater
+for js_file in *.js; do
+  pm2 start "$js_file" --name "$(basename "$js_file" .js)"
+done
 
 # Save the current PM2 configuration
 pm2 save
